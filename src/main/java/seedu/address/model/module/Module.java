@@ -30,7 +30,8 @@ public class Module {
     /**
      * Every field must be present and not null.
      */
-    public Module(Name name, ModuleCode moduleCode, int mcCount, Color color, Set<Tag> tags, UniqueModuleList prerequisites) {
+    public Module(Name name, ModuleCode moduleCode, int mcCount, Color color, Set<Tag> tags,
+                  UniqueModuleList prerequisites) {
         requireAllNonNull(name, moduleCode, tags);
         this.name = name;
         this.moduleCode = moduleCode;

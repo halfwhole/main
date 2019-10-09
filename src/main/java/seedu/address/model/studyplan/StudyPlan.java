@@ -139,8 +139,8 @@ public class StudyPlan implements Cloneable {
     @Override
     public boolean equals(Object other) {
         if (other instanceof StudyPlan) {
-            return this.index == ((StudyPlan) other).index &&
-                    this.semesters.equals(((StudyPlan) other).getSemesters());
+            return this.index == ((StudyPlan) other).index
+                    && this.semesters.equals(((StudyPlan) other).getSemesters());
         } else {
             return false;
         }
