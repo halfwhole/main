@@ -188,8 +188,6 @@ public class HelpCommand extends Command {
             return new CommandResult(RemoveTagFromStudyPlanCommand.MESSAGE_USAGE, false, false);
         case SortStudyPlansByPriorityTagCommand.COMMAND_WORD:
             return new CommandResult(SortStudyPlansByPriorityTagCommand.MESSAGE_USAGE, false, false);
-        case CheckCommand.COMMAND_WORD:
-            return new CommandResult(CheckCommand.MESSAGE_USAGE, false, false);
         case "":
             return new CommandResult(SHOWING_HELP_MESSAGE, false, false);
         default:
