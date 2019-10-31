@@ -3,6 +3,7 @@ package seedu.address.model.studyplan;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -571,18 +572,18 @@ public class StudyPlan implements Cloneable {
     }
 
     /**
-     * Gets the number of core modules in the study plan.
+     * Gets the number of unique core modules in the study plan.
      */
     public int getNumCoreModules() {
-        int countCores = 0;
+        HashSet<Module> set = new HashSet<>();
         for (Semester sem : semesters) {
             for (Module mod : sem.getModules()) {
                 if (mod.getTags().containsTagWithName("Core")) {
-                    countCores++;
+                    set.add(mod);
                 }
             }
         }
-        return countCores;
+        return set.size();
     }
 
     /**
