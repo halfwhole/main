@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import seedu.address.model.Color;
 import seedu.address.model.ModuleInfo;
@@ -21,6 +22,7 @@ import seedu.address.model.semester.UniqueSemesterList;
 import seedu.address.model.semester.exceptions.SemesterAlreadyBlockedException;
 import seedu.address.model.semester.exceptions.SemesterNotFoundException;
 import seedu.address.model.tag.DefaultTag;
+import seedu.address.model.tag.DefaultTagType;
 import seedu.address.model.tag.PriorityTag;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.tag.UniqueTagList;
@@ -587,20 +589,19 @@ public class StudyPlan implements Cloneable {
      * Returns a HashMap of focus area primary names as keys, and the number of modules satisfying it as the value.
      */
     public HashMap<String, Integer> getFocusPrimaries() {
-        List<String> tags = this.moduleTags
-                .asListOfStrings()
-                .stream()
-                .filter(x -> x.endsWith(":P]"))
+        DefaultTagType[] tagTypes = DefaultTagType.class.getEnumConstants();
+        List<String> tags = Stream.of(tagTypes)
+                .map(x -> x.getDefaultTagTypeName())
+                .filter(x -> x.endsWith(":P"))
                 .collect(Collectors.toList());
         HashMap<String, Integer> mapTags = new HashMap<>();
         // forgive me
-        tags.forEach(tag -> mapTags.put(tag.substring(1, tag.length() - 1), 0));
+        tags.forEach(tag -> mapTags.put(tag, 0));
         for (Semester sem : semesters) {
             for (Module mod : sem.getModules()) {
                 for (String tag : tags) {
-                    String strippedTag = tag.substring(1, tag.length() - 1);
-                    if (mod.getTags().containsTagWithName(strippedTag)) {
-                        mapTags.put(strippedTag, mapTags.get(strippedTag) + 1);
+                    if (mod.getTags().containsTagWithName(tag)) {
+                        mapTags.put(tag, mapTags.get(tag) + 1);
                     }
                 }
             }
