@@ -456,6 +456,11 @@ public class CheckCommandTest {
         public void addToHistory() {
             throw new AssertionError("This method should not be called.");
         }
+
+        @Override
+        public int clearInvalidMods() {
+            throw new AssertionError("This method should not be called.");
+        }
     }
 
     private class ModelStubOne implements Model {
@@ -754,6 +759,11 @@ public class CheckCommandTest {
         public void addToHistory() {
             throw new AssertionError("This method should not be called.");
         }
+
+        @Override
+        public int clearInvalidMods() {
+            throw new AssertionError("This method should not be called.");
+        }
     }
 
     private class ModelStubTwo implements Model {
@@ -1050,6 +1060,11 @@ public class CheckCommandTest {
 
         @Override
         public void addToHistory() {
+            throw new AssertionError("This method should not be called.");
+        }
+
+        @Override
+        public int clearInvalidMods() {
             throw new AssertionError("This method should not be called.");
         }
     }
