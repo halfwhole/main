@@ -17,7 +17,7 @@ public class ValidModsCommand extends Command {
     public static final String HELP_MESSAGE = COMMAND_WORD + ": Viewing valid modules that can be taken";
     public static final String MESSAGE_USAGE = COMMAND_WORD
             + ": Shows all valid modules that can be taken in a given semester.\n"
-            + "Parameters: SEMESTER (must be a valid semester)\n"
+            + "Parameters: SEMESTER\n"
             + "Example: " + COMMAND_WORD + " y1s1";
 
     private final SemesterName semName;
