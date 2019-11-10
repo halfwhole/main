@@ -15,6 +15,9 @@ import seedu.address.model.module.Module;
 import seedu.address.model.module.UniqueModuleList;
 import seedu.address.ui.ResultViewType;
 
+/**
+ * Shows a generic list of modules, which can be extended to core modules, focus area modules, etc.
+ */
 public abstract class ShowCommand extends Command {
 
     protected String messageSuccess;
@@ -50,5 +53,5 @@ public abstract class ShowCommand extends Command {
         return matchingModules;
     }
 
-    abstract boolean checkModule(Module currentModule);
+    protected abstract boolean checkModule(Module currentModule);
 }
