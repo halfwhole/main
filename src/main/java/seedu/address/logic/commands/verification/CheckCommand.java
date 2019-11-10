@@ -27,6 +27,10 @@ public class CheckCommand extends Command {
 
     private String checkArea;
 
+    public CheckCommand() {
+        this("ALL");
+    }
+
     public CheckCommand(String checkArea) {
         this.checkArea = checkArea;
     }
