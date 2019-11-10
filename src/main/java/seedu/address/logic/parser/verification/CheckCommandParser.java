@@ -1,7 +1,6 @@
 package seedu.address.logic.parser.verification;
 
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_MODULE;
 
 import seedu.address.logic.commands.verification.CheckCommand;
 import seedu.address.logic.parser.Parser;
@@ -22,8 +21,8 @@ public class CheckCommandParser implements Parser<CheckCommand> {
         String parsedArgs = args.strip().toUpperCase();
         if ("".equals(parsedArgs)) {
             return new CheckCommand("ALL");
-        } else if ("ALL".equals(parsedArgs) || "FOCUS".equals(parsedArgs) ||
-                "MCS".equals(parsedArgs) || "CORE".equals(parsedArgs)) {
+        } else if ("ALL".equals(parsedArgs) || "FOCUS".equals(parsedArgs)
+                || "MCS".equals(parsedArgs) || "CORE".equals(parsedArgs)) {
             return new CheckCommand(parsedArgs);
         } else {
             throw new ParseException(

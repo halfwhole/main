@@ -27,6 +27,9 @@ public class StudyPlanVerificationHelper {
         }
     }
 
+    /**
+     * Describes whether MC requirements for a study plan have been fulfilled.
+     */
     public static String describeMcsFulfilled(StudyPlan sp) {
         if (checkMcs(sp)) {
             return "MC requirements have been fulfilled!";
@@ -35,6 +38,9 @@ public class StudyPlanVerificationHelper {
         }
     }
 
+    /**
+     * Describes whether core module requirements for a study plan have been fulfilled.
+     */
     public static String describeCoreFulfilled(StudyPlan sp) {
         if (checkCore(sp)) {
             return "Core requirements have been fulfilled!";
@@ -43,6 +49,9 @@ public class StudyPlanVerificationHelper {
         }
     }
 
+    /**
+     * Describes whether focus area requirements for a study plan have been fulfilled.
+     */
     public static String describeFocusFulfilled(StudyPlan sp) {
         if (checkFocus(sp)) {
             return "Focus area requirements have been fulfilled!";
