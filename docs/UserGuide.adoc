@@ -235,10 +235,10 @@ _Core_ modules are *Computer Science Foundation* modules that count towards *Pro
 - `S/U-able` :
 _S/U-able_ modules are modules that permit the *Satisfactory/Unsatisfactory option*.
 
-- `UE` :
+- `UE` [coming in v2.0]:
 _UE_ modules are *Unrestricted Elective* modules.
 
-- `ULR` :
+- `ULR` [coming in v2.0]:
 _ULR_ modules are modules that count towards *University Level Requirements*.
 
 - `FOCUS_AREA_NAME:P` :
